@@ -1,0 +1,46 @@
+{
+  "name": "Begin",
+  "version": "0.1.0",
+  "description": "All the things you need to start a project you'll never finish.",
+  "author": "Byteopia",
+  "contributors": [
+    {
+      "name": "Spencer Finnell",
+      "email": "spencer@byteopia.com"
+    }
+  ],
+  "license": "GPL 3.0",
+  "main": "app/index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/byteopia/begin"
+  },
+  "devDependencies": {
+    "backbone": "~1.1.2",
+    "backbone.marionette": "^2.4.1",
+    "browser-sync": "^2.6.5",
+    "browserify": "^9.0.8",
+    "coffee-script": "^1.9.2",
+    "coffeeify": "",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "",
+    "gulp-concat": "",
+    "gulp-css-globbing": "^0.1.7",
+    "gulp-minify-css": "^1.1.0",
+    "gulp-minify-html": "^1.0.2",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rev": "^3.0.1",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-uglifyjs": "^0.6.1",
+    "gulp-usemin": "^0.3.11",
+    "gulp-watch": "^4.2.4",
+    "hogan.js": "^3.0.2",
+    "hoganify": "^0.2.0",
+    "jquery": "^2.1.3",
+    "main-bower-files": "^2.7.0",
+    "rev-del": "^1.0.4",
+    "underscore": "^1.8.3",
+    "wiredep": "^2.2.2"
+  }
+}

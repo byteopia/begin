@@ -1,0 +1,26 @@
+{
+  "name": "Begin",
+  "version": "0.1.0",
+  "authors": [
+    "Byteopia <contact@byteopia.com>",
+    "Spencer Finnell <spencerfinnell@gmail.com>"
+  ],
+  "description": "All the things you need to start a project you'll never finish.",
+  "main": "build/index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionicons": "~2.0.1",
+    "susy": "~2.2.2",
+    "metaquery": "~1.2.5"
+  }
+}
