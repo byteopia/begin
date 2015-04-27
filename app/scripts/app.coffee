@@ -3,11 +3,19 @@ Backbone   = require 'backbone'
 Backbone.$ = $
 Marionette = require 'backbone.marionette'
 
-$ ->
-  template = require '../templates/begin.ms'
-  message  = template.render { text: 'Begin here.' }
+myModel    = require './models/mymodel.coffee'
+myView     = require './views/myview.coffee'
 
-  $( 'body' ).prepend message
+$ ->
+  App = new Marionette.Application()
+
+  App.on 'start', ->
+    mymodel = new myModel text: 'Begin here.'
+
+    staticView = new myView( model: mymodel )
+    staticView.render()
+
+  App.start()
 
   # console.log $
   # console.log Marionette
