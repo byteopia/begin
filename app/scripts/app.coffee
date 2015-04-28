@@ -3,20 +3,30 @@ Backbone   = require 'backbone'
 Backbone.$ = $
 Marionette = require 'backbone.marionette'
 
-myModel    = require './models/mymodel.coffee'
-myView     = require './views/myview.coffee'
-
 $ ->
   App = new Marionette.Application()
 
-  App.on 'start', ->
-    mymodel = new myModel text: 'Begin here.'
+  Marionette.Renderer.render = (template, data) ->
+    template.render data
 
-    staticView = new myView( model: mymodel )
-    staticView.render()
+  App.on 'start', ->
+    beginModel = require './models/begin.coffee'
+    
+    pageLayout = require './views/layouts/page.coffee'
+    
+    accessView = require './views/access.coffee'
+    beginView  = require './views/begin.coffee'
+
+    container = new Backbone.Marionette.Region
+      el: 'body'
+
+    page    = new pageLayout()
+    access  = new accessView()
+    begin   = new beginView
+      model: new beginModel text: 'Begin here.'
+
+    container.show page
+    page.access.show access
+    page.content.show begin
 
   App.start()
-
-  # console.log $
-  # console.log Marionette
-  # console.log Backbone

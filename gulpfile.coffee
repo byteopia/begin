@@ -1,13 +1,14 @@
 browserSync   = require 'browser-sync'
 browserReload = browserSync.reload
 
+browserify  = require 'gulp-browserify'
+
 gulp        = require 'gulp'
 plumber     = require 'gulp-plumber'
 del         = require 'del'
 
 # assets 
 watch       = require 'gulp-watch'
-browserify  = require 'gulp-browserify'
 concat      = require 'gulp-concat'
 sass        = require 'gulp-ruby-sass'
 minifyCss   = require 'gulp-minify-css'
@@ -109,8 +110,9 @@ gulp.task 'usemin', [ 'copy:dist' ], ->
 gulp.task 'server', [ 'bower' ], ->
   browserSync
     notify: false
-    port: 9000,
+    port: 9000
     open: false
+    ui: false
     server:
       baseDir: [ config.build ]
       routes:
