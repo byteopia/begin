@@ -10,12 +10,12 @@ $ ->
     template.render data
 
   App.on 'start', ->
-    beginModel = require './models/begin.coffee'
+    beginModel = require 'models/begin.coffee'
     
-    pageLayout = require './views/layouts/page.coffee'
+    pageLayout = require 'views/layouts/page.coffee'
     
-    accessView = require './views/access.coffee'
-    beginView  = require './views/begin.coffee'
+    accessView = require 'views/access.coffee'
+    beginView  = require 'views/begin.coffee'
 
     container = new Backbone.Marionette.Region
       el: 'body'

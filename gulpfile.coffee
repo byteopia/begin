@@ -74,7 +74,7 @@ gulp.task 'scripts', ->
   stream = gulp.src "#{config.scripts}/app.coffee", read: false
     .pipe plumber()
     .pipe browserify
-      transform: [ 'coffeeify', 'hoganify' ]
+      transform: [ 'coffeeify', 'aliasify', 'hoganify' ]
     .pipe concat( 'app.js' )
     .pipe gulp.dest( config.build )
     .pipe browserReload

@@ -15,7 +15,22 @@
     "type": "git",
     "url": "https://github.com/byteopia/begin"
   },
+  "aliasify": {
+    "aliases": {
+      "app":         "./app",
+
+      "templates":   "./app/templates",
+
+      "collections": "./app/scripts/collections",
+      "models":      "./app/scripts/models",
+      "modules":     "./app/scripts/collections",
+      "routers":     "./app/scripts/routers",
+      "views":       "./app/scripts/views"
+    },
+    "verbose": false
+  },
   "devDependencies": {
+    "aliasify": "^1.7.2",
     "backbone": "~1.1.2",
     "backbone.marionette": "^2.4.1",
     "browser-sync": "^2.6.5",
