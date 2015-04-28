@@ -3,30 +3,37 @@ Backbone   = require 'backbone'
 Backbone.$ = $
 Marionette = require 'backbone.marionette'
 
+Router     = require 'routers/default.coffee'
+
+RootView      = require 'views/regions/container.coffee'
+BaseLayout     = require 'views/layouts/base.coffee'
+
 $ ->
-  App = new Marionette.Application()
+  window.App = new Marionette.Application()
+
+  App.Views = {}
 
   Marionette.Renderer.render = (template, data) ->
     template.render data
+  
+  App.navigate = (route,  options) ->
+    options ?= {}
+    history.pushState('', '', route);
+    Backbone.history.checkUrl()
 
-  App.on 'start', ->
-    beginModel = require 'models/begin.coffee'
-    
-    pageLayout = require 'views/layouts/page.coffee'
-    
-    accessView = require 'views/access.coffee'
-    beginView  = require 'views/begin.coffee'
+  App.getCurrentRoute = ->
+    Backbone.history.fragment
 
-    container = new Backbone.Marionette.Region
-      el: 'body'
+  App.on 'before:start', =>
+    $(document).on 'click', 'a', (e) ->
+      return if e.metaKey
 
-    page    = new pageLayout()
-    access  = new accessView()
-    begin   = new beginView
-      model: new beginModel text: 'Begin here.'
+      href = e.target.href || $(e.target).parents('a')[0].href
+      if /localhost/.test(href)
+        e.preventDefault()
+        App.navigate href
 
-    container.show page
-    page.access.show access
-    page.content.show begin
+  App.on 'start', =>
+    Backbone.history.start pushState: true
 
   App.start()
