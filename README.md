@@ -10,7 +10,7 @@ $ git clone git@github.com:byteopia/begin.git && cd begin
 
 Install
 -------
-This repo is dependant on [node](https://nodejs.org).  Be sure to install them before continuing `node -v`.
+This repo is dependant on [node](https://nodejs.org).  Be sure to it is properly installed before continuing: `node -v`.
 ```
 $ npm install
 $ npm install -g bower
