@@ -1,22 +1,29 @@
-### Begin here.
+Begin here.
+==========
+All the things you need to start a *web* project you'll never finish.
 
-**1. Clone**
+Clone
+----
 ```
 $ git clone git@github.com:byteopia/begin.git && cd begin
 ```
 
-**2. Install**
+Install
+-------
+This repo is dependant on [node](https://nodejs.org).  Be sure to install them before continuing `node -v`.
 ```
 $ npm install
 $ bower install
 ```
 
-**3. Build**
+Build
+-----
 ```
 $ gulp build
 ```
 
-**4. Distribute (yeah...right)**
+Distribute (yeah...right)
+----------
 ```
 $ gulp dist
 ```
