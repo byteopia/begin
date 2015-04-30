@@ -13,6 +13,7 @@ Install
 This repo is dependant on [node](https://nodejs.org).  Be sure to install them before continuing `node -v`.
 ```
 $ npm install
+$ npm install -g bower
 $ bower install
 ```
 
