@@ -1,5 +1,6 @@
 browserSync   = require 'browser-sync'
 browserReload = browserSync.reload
+historyApiFallback = require 'connect-history-api-fallback'
 
 browserify  = require 'gulp-browserify'
 
@@ -115,6 +116,7 @@ gulp.task 'server', [ 'bower' ], ->
     ui: false
     server:
       baseDir: [ config.build ]
+      middleware: [ historyApiFallback() ]
       routes:
         '/bower_components': 'bower_components'
 

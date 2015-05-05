@@ -37,6 +37,7 @@
     "browserify": "^9.0.8",
     "coffee-script": "^1.9.2",
     "coffeeify": "",
+    "connect-history-api-fallback": "^1.1.0",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-browserify": "",

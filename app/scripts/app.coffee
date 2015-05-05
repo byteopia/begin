@@ -13,13 +13,6 @@ Router     = require 'routers/default.coffee'
 Controller = require 'controllers/default.coffee'
 Views      = require 'views/views.coffee'
 
-App.navigate = (route, options) ->
-  options ?= {}
-
-  history.pushState '', '', route
-
-  Backbone.history.checkUrl()
-
 App.on 'before:start', =>
   $(document).on 'click', 'a', (e) ->
     return if e.metaKey
