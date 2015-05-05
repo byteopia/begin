@@ -24,7 +24,7 @@ revDel      = require 'rev-del'
 uglify      = require 'gulp-uglifyjs'
 
 config =
-  app:       "app"
+  app:      "app"
   styles:    "app/styles" 
   scripts:   "app/scripts"
   templates: "app/templates"
